@@ -37,7 +37,7 @@ Each observation contains:
 - Customer features (`f0`–`f11`)
 - Treatment indicator (advertisement shown)
 - Conversion outcome
-- Additional behavioral variables
+- Additional behavioral variables used for modeling
 
 ---
 
@@ -61,8 +61,6 @@ The dataset originates from a randomized experiment, allowing estimation of the 
 
 The **Average Treatment Effect (ATE)** was estimated as the difference in conversion rates between the treatment and control groups. A confidence interval and hypothesis test were then used to determine whether the observed treatment effect was statistically distinguishable from zero rather than the result of random sampling variability.
 
-The difference in conversion rates between treatment and control groups was estimated and evaluated using hypothesis testing and confidence intervals.
-
 <img width="395" height="200" alt="01_ab_test_effect" src="https://github.com/user-attachments/assets/6745b349-ad1e-4842-814a-dec89593c959" />
 
 The experiment showed that the advertising campaign increased conversions on average.
@@ -71,7 +69,7 @@ The experiment showed that the advertising campaign increased conversions on ave
 
 ## Business Impact
 
-Beyond statistical significance, the treatment effect was translated into business metrics.
+Beyond determining statistical significance, the treatment effect was translated into estimated business value.
 
 Using assumed revenue per conversion and advertising cost, the overall financial impact of the campaign was estimated to determine whether the campaign was economically beneficial.
 
@@ -99,7 +97,7 @@ A logistic regression model estimated each customer's **propensity score**, or p
 
 As an alternative adjustment method, I implemented IPTW.
 
-Rather than matching individuals, IPTW assigns weights based on inverse treatment probabilities to construct a weighted pseudo-population where observed covariates are more balanced between treatment groups. Unlike matching, which discards some observations, IPTW retains the full dataset by weighting each customer according to the inverse of their probability of receiving the treatment they actually received. This creates a weighted pseudo-population in which observed covariates are more balanced between treatment groups.
+Rather than matching individuals, IPTW assigns weights based on inverse treatment probabilities. Unlike matching, which discards some observations, IPTW retains the full dataset by weighting each customer according to the inverse of their probability of receiving the treatment they actually received. This creates a weighted pseudo-population in which observed covariates are more balanced between treatment groups.
 
 ### Common Support
 
