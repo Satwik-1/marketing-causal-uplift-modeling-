@@ -5,7 +5,7 @@ Built a marketing causal uplift model using statistical analysis and machine lea
 
 Predicting who **will** convert is often less valuable than predicting **who will convert because of an intervention**.
 
-In this project, I analyzed the effectiveness of a digital marketing campaign using randomized experimentation, causal inference, and uplift modeling. Beginning with an A/B test, I estimated the average treatment effect of the campaign before simulating a real-world observational setting and applying Propensity Score Matching (PSM) and Inverse Probability of Treatment Weighting (IPTW) to reduce selection bias. Finally, I built a T-Learner uplift model to estimate individualized treatment effects and identify which customers should actually receive advertising.
+In this project, I analyzed the effectiveness of a digital marketing campaign using randomized experimentation, causal inference, and uplift modeling. Beginning with an A/B test, I estimated the average treatment effect of the campaign before simulating a real-world observational setting and applying Propensity Score Matching (PSM) and Inverse Probability of Treatment Weighting (IPTW) to illustrate common adjustment methods for observational data. Finally, I built a T-Learner uplift model to estimate individualized treatment effects and identify which customers should actually receive advertising.
 
 ---
 
@@ -107,6 +107,8 @@ Before interpreting causal estimates, overlap between treatment and control prop
 
 The observed overlap indicates that causal comparisons are reasonable for much of the population.
 
+Although these methods improved comparability between groups, their estimates remained different from the randomized A/B result, illustrating the limitations of adjustment methods in observational settings.
+
 ---
 
 ## Uplift Modeling (T-Learner)
@@ -160,7 +162,7 @@ Expected revenue, advertising cost, and expected profit were estimated under sim
 
 <img width="471" height="248" alt="04_profit_comparison" src="https://github.com/user-attachments/assets/f62bbc4c-1b81-4f01-acf0-ccdf37f732b2" />
 
-Targeting only the highest predicted uplift customers produced the strongest expected financial performance, illustrating how personalized treatment strategies can outperform uniform advertising.
+Targeting customers with the highest predicted uplift substantially improved expected profitability. Under the assumptions used in this analysis, targeting the top 20% of customers produced the highest estimated profit, illustrating how personalized treatment strategies can outperform uniform advertising.
 
 ---
 
@@ -168,9 +170,9 @@ Targeting only the highest predicted uplift customers produced the strongest exp
 
 - Estimated the Average Treatment Effect using a randomized A/B test.
 - Demonstrated how observational bias can distort causal conclusions.
-- Reduced confounding using Propensity Score Matching and IPTW.
+- Applied Propensity Score Matching (PSM) and Inverse Probability of Treatment Weighting (IPTW) to demonstrate adjustment methods for observational data.
 - Built a T-Learner to estimate individualized treatment effects.
-- Validated uplift predictions using observed treatment effects across uplift deciles.
+- Evaluated uplift predictions by comparing observed treatment effects across predicted uplift deciles.
 - Compared alternative marketing strategies using expected business profit rather than predictive accuracy alone.
 
 ---
