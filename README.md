@@ -142,9 +142,9 @@ Customers with larger predicted uplift are expected to benefit more from receivi
 
 Predicted uplift was validated by grouping customers into deciles according to predicted treatment effect.
 
-Observed treatment effects were then calculated within each decile.
+Observed treatment effects were then calculated within each decile. To avoid optimistic evaluation, the T-Learner was trained on a training split and uplift validation was performed only on the held-out test set.
 
-<img width="487" height="248" alt="03_uplift_validation" src="https://github.com/user-attachments/assets/b5253d23-b058-47eb-8248-71f0548a220c" />
+<img width="324" height="180" alt="Screenshot 2026-07-06 003043" src="https://github.com/user-attachments/assets/6b6b243a-8c68-4d39-8d6c-852c81cd4de8" />
 
 Customers in the highest predicted uplift deciles experienced substantially larger observed treatment effects, suggesting that the model successfully ranked customers according to their responsiveness to advertising. Because individual treatment effects are not directly observable, uplift models cannot be evaluated using traditional supervised learning metrics alone. Instead, customers were ranked by their predicted uplift and grouped into deciles, allowing observed treatment effects to be compared across groups. A successful uplift model assigns larger observed treatment effects to higher predicted uplift deciles, demonstrating effective prioritization of customers rather than merely accurate conversion prediction.
 
@@ -160,7 +160,7 @@ Three targeting strategies were compared:
 
 Expected revenue, advertising cost, and expected profit were estimated under simple business assumptions.
 
-<img width="471" height="248" alt="04_profit_comparison" src="https://github.com/user-attachments/assets/f62bbc4c-1b81-4f01-acf0-ccdf37f732b2" />
+<img width="344" height="182" alt="Screenshot 2026-07-06 003052" src="https://github.com/user-attachments/assets/c6b357df-0501-463d-85c5-4d02e99d2e95" />
 
 Targeting customers with the highest predicted uplift substantially improved expected profitability. Under the assumptions used in this analysis, targeting the top 20% of customers produced the highest estimated profit, illustrating how personalized treatment strategies can outperform uniform advertising.
 
