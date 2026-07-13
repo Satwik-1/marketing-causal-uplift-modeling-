@@ -175,6 +175,10 @@ Targeting customers with the highest predicted uplift substantially improved exp
 - Evaluated uplift predictions by comparing observed treatment effects across predicted uplift deciles.
 - Compared alternative marketing strategies using expected business profit rather than predictive accuracy alone.
 
+## Behavioral Interpretation & Future Work
+
+This project demonstrates that customers do not respond uniformly to marketing interventions. Rather than asking whether a campaign works on average, uplift modeling identifies which customers are most likely to change their behavior because of treatment. Future work could investigate why these customers are more persuadable by incorporating additional behavioral features or experimentally testing alternative messaging strategies.
+
 ---
 
 ## Assumptions
